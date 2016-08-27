@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Popckorn Sites</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+	<!--   Agregamos el parcial del navbar-->
+    <%= render "partials/navigation" %>
+    
+    <!--	Mensajes Flash, que nos pide que incluyamos la gema devise-->
+	 <p class="notice" style="<%= 'display: none;' if notice.nil? %>"><%= notice %></p>
+	 <p class="alert" style="<%= 'display: none;' if alert.nil? %>"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
