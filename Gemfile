@@ -34,6 +34,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 #Gema para los usuarios
 gem 'devise'
+#Fuentes externas
+gem 'font-awesome-rails'
+# Intalación con redes sociales
+gem 'omniauth'
+# Middleware para autenticación con facebook
+gem 'omniauth-facebook'
+#Intalar la gema de twitter
+gem 'omniauth-twitter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

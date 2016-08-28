@@ -1,18 +1,25 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
+require "omniauth-facebook"
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'bd324daacf3fe5798a72195da8d99e8cc1f9ff1b5041fe22260b21cc6699718f22d9d7c73bbab3881880026cde023d5785bf018656496fd15a9874a7fe64a58d'
+  #config.secret_key = 'bd324daacf3fe5798a72195da8d99e8cc1f9ff1b5041fe22260b21cc6699718f22d9d7c73bbab3881880026cde023d5785bf018656496fd15a9874a7fe64a58d'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+	
+	OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
+	#Configuración de omiauth para facebook
+	config.omniauth :facebook, "1084520311584317", "5837bd34262d135b534a61f85dfe7946", scope: 'email', info_fields: 'email, first_name, last_name'
+	
+	config.omniauth :twitter, "PhnDDOQL1HyIED4ugVMk0gH2J","58QUuSDGD8EXS1bRlLq2Cxm6FuwVRa6tgj0MoiKHpkfuMfRotB"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
