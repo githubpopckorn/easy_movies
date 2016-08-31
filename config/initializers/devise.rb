@@ -17,7 +17,7 @@ Devise.setup do |config|
 	
 	OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
 	#Configuración de omiauth para facebook
-	config.omniauth :facebook, "1084520311584317", "5837bd34262d135b534a61f85dfe7946", scope: 'email', info_fields: 'email, first_name, last_name'
+	config.omniauth :facebook, "1084520311584317", "5837bd34262d135b534a61f85dfe7946",scope: "email", info_fields: "email, name, first_name, last_name, gender, link"
 	
 	config.omniauth :twitter, "PhnDDOQL1HyIED4ugVMk0gH2J","58QUuSDGD8EXS1bRlLq2Cxm6FuwVRa6tgj0MoiKHpkfuMfRotB"
 
@@ -41,7 +41,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [:email]
+  #config.authentication_keys = [:username]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -53,12 +53,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:email]
+  #config.case_insensitive_keys = [:username]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [:email]
+  #config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the

@@ -1,6 +1,7 @@
 <nav class="navbar navbar-default navbar-static-top" >
 	<div class="container">
 	<%= link_to "Home", root_path, class: "navbar-brand active" %>
+    <%= link_to "Post", posts_path, class: "navbar-brand"%>
 		<% if user_signed_in? %>
 		<ul class="nav navbar-nav navbar-right">
 			<li>
