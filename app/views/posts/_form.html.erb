@@ -11,23 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :contenido %>
-    <%= f.text_area :contenido %>
+    <%= f.text_area :contenido, class: "form-control" %>
   </div>
-
-  <div class="field">
-    <%= f.label :extension %>
-    <%= f.text_field :extension %>
+  
+  <div class="form-group">
+    <%= f.label :archivo %>
+    <%= f.file_field :archivo %>
+    <p></p>
   </div>
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Subir post", class: "btn btn-info" %>
   </div>
 <% end %>
